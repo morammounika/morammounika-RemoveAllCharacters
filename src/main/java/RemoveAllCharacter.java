@@ -1,4 +1,5 @@
 
+
 public class RemoveAllCharacter {
     /**
      * Return a String that has all the character of a String removed.
@@ -11,7 +12,8 @@ public class RemoveAllCharacter {
      * @param ch A string containing a single character which should be removed from str.
      * @return str, without any characters of type ch.
      */
-    public String removeAll(String str, String ch){
-        return null;
-    }
+    public String removeAll(String str, String ch){ String escapedCh = ch.replaceAll("[\\[\\\\.*+?\\^\\]$(){}=!<>|:\\-]", "\\\\$0");
+    // Use regular expression to replace all occurrences of ch with an empty string
+    return str.replaceAll(escapedCh,"");
+}
 }
